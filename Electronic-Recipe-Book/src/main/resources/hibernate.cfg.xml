@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+  ~ Copyright (c) 2020. University of Canterbury
+  ~
+  ~ This file is part of SENG301 lab material.
+  ~
+  ~  The lab material is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU Lesser General Public License as published
+  ~  by the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  The lab material is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU Lesser General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU Lesser General Public License
+  ~  along with this material.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.SQLiteDialect</property>
+    <property name="connection.url">jdbc:sqlite:asg1.sqlite</property>
+    <property name="connection.driver_class">org.sqlite.JDBC</property>
+    <!-- property name="connection.username"/ -->
+    <!-- property name="connection.password"/ -->
+    <!-- DB schema will be created at runtime,
+        if you want to keep the data between runs, comment this line -->
+    <property name="hibernate.hbm2ddl.auto">create</property>
+    <!-- specify the classes that are mapped to database tables -->
+    <mapping class="uc.seng301.asg1.entity.Ingredient"/>
+    <mapping class="uc.seng301.asg1.entity.PreparationStep"/>
+    <mapping class="uc.seng301.asg1.entity.Recipe"/>
+  </session-factory>
+</hibernate-configuration>
